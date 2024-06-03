@@ -20,7 +20,7 @@ class Result
      */
     public function __construct(array $attributes)
     {
-        $this->message_id = $attributes['message_id'];
+        $this->message_id = $attributes['message_id']?:'';
         $this->messages = array_change_key_case(
             array_map(fn ($message) => new Message($message), $attributes['messages'])
         );
