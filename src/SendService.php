@@ -31,7 +31,7 @@ class SendService
     {
         return $this->client->prepareResponse(
             $this->client->getHttpClient()->post('send/raw', [
-                'json' => $message,
+                'json' => $message->attributes,
             ]),
             Result::class,
         );
